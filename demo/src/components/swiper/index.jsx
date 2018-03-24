@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import ToolBox from 'react-simple-swiper'
+import ToolBox from 'react-tiny-swiper'
 
 const { Swiper } = ToolBox
 export default class App extends Component {
