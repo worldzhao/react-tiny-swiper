@@ -1,12 +1,15 @@
 const path = require('path')
 const nodeExternals = require('webpack-node-externals')
+const webpack = require('webpack')
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
 
 module.exports = {
   entry: './src/index.js',
   output: {
     filename: 'bundle.js',
     path: path.resolve(__dirname, 'dist'),
-    libraryTarget: 'commonjs2',
+    library: 'react-tiny-swiper',
+    libraryTarget: 'umd',
   },
   resolve: {
     extensions: ['.js', '.jsx'],
@@ -29,5 +32,11 @@ module.exports = {
       },
     ],
   },
+  plugins: [
+    new webpack.DefinePlugin({
+      'process.env.NODE_ENV': JSON.stringify('production'),
+    }),
+    new UglifyJsPlugin(),
+  ],
   externals: [nodeExternals()],
 }

@@ -49,6 +49,7 @@ export default class Swiper extends (Component || PureComponent) {
       height,
     })
   }
+
   componentDidMount() {
     this.removeAutoPlaySideEffect()
     this.autoPlay()

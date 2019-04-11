@@ -1,36 +1,39 @@
 import React, { Component } from 'react'
 import ToolBox from 'react-tiny-swiper'
+import img1 from '../../img/1.jpg'
+import img2 from '../../img/2.jpg'
+import img3 from '../../img/3.jpg'
+import img4 from '../../img/4.jpg'
+import img5 from '../../img/5.jpg'
+import img6 from '../../img/6.jpg'
 
+console.log('====================================')
+console.log(ToolBox)
+console.log('====================================')
 const { Swiper } = ToolBox
-export default class App extends Component {
+export default class TestSwiper extends Component {
   componentDidMount() {
     // do sth
   }
   render() {
     const items = [
       {
-        imgurl: 'http://p1.music.126.net/CH-2t5r30b8R-R_NegR2wg==/109951163204412773.jpg',
+        imgurl: img1,
       },
       {
-        imgurl: 'http://p1.music.126.net/_AwNVzAV98JvvsIf-5qsRQ==/109951163204453498.jpg',
+        imgurl: img2,
       },
       {
-        imgurl: 'http://p1.music.126.net/EFP2ghhlZdO_XEC9yIdopw==/109951163203511401.jpg',
+        imgurl: img3,
       },
       {
-        imgurl: 'http://p1.music.126.net/QmQVr9i9paIt29oliTRsaQ==/109951163203026211.jpg',
+        imgurl: img4,
       },
       {
-        imgurl: 'http://p1.music.126.net/OJ_FB4X8YLW3N6Ck3gcQxA==/109951163204513240.jpg',
+        imgurl: img5,
       },
       {
-        imgurl: 'http://p1.music.126.net/SjA6t1xFG_QOXVmbtf8Sjw==/109951163204460397.jpg',
-      },
-      {
-        imgurl: 'http://p1.music.126.net/SPGHjI1hS55RWBjV8bF5pw==/109951163200028103.jpg',
-      },
-      {
-        imgurl: 'http://p1.music.126.net/sMHXjO1kiBRktX6XYfn3eg==/109951163204470542.jpg',
+        imgurl: img6,
       },
     ]
     const setting = {
@@ -48,11 +51,10 @@ export default class App extends Component {
       <Swiper {...setting}>
         {items.map(item => (
           <div key={item.imgurl}>
-            <img src={item.imgurl} alt="slick" />
+            <img src={item.imgurl} alt="slick" key="item.imgurl" />
           </div>
-      ))}
+        ))}
       </Swiper>
     )
   }
 }
-
